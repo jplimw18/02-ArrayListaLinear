@@ -103,10 +103,10 @@ void inserirElemento()
 }
 
 // deve ser implementada como resposta ao exercicio
-// gravar numeor requisitado
+// gravar numero requisitado
 // numero de vezes em que aparece
 // posicao em que aparece
-// caso n„o encontrado return "n„o encontrado"
+// caso n√£o encontrado return "n√£o encontrado"
 
 
 void buscarElemento()
