@@ -111,33 +111,41 @@ void inserirElemento()
 
 void buscarElemento()
 {
-	int ocorr = 0; // numero de ocorencias
-	int pos[MAX]{}; // lista para armazenar posicoes
-	int tailPos = 0;
-	int query = 0; // numero procurado 
-
-	cout << "Insira qual elemento deseja localizar: ";
-	cin >> query;
-
-	for (size_t i = 0; i < nElementos; ++i) {
-		if (lista[i] == query)
+	if (nElementos > 0)
+	{
+		int ocorr = 0; // numero de ocorencias
+		int pos[MAX]{}; // lista para armazenar posicoes
+		int tailPos = 0;
+		int query = 0; // numero procurado 
+	
+		cout << "Insira qual elemento deseja localizar: ";
+		cin >> query;
+	
+		for (size_t i = 0; i < nElementos; ++i) {
+			if (lista[i] == query)
+			{
+				ocorr++;
+				pos[tailPos++] = i;
+			}
+		}
+	
+		if (ocorr != 0)
 		{
-			ocorr++;
-			pos[tailPos++] = i;
+			cout << "O Numero '" << query << "' foi encontrado " << ocorr << " veze(s)" << endl;
+			string resp = "";
+	
+			for (size_t i = 0; i < tailPos; ++i) {
+				cout << "Ocorreu na posicao: " << pos[i] << endl;
+			}
+		} 
+		else 
+		{
+			cout << "O Elemento nao foi encontrado" << endl;
 		}
 	}
-
-	if (ocorr != 0)
+	else
 	{
-		cout << "O Numero '" << query << "' foi encontrado " << ocorr << " veze(s)" << endl;
-		string resp = "";
-
-		for (size_t i = 0; i < tailPos; ++i) {
-			cout << "Ocorreu na posicao: " << pos[i] << endl;
-		}
-	} 
-	else 
-	{
-		cout << "O Elemento nao foi encontrado" << endl;
+		cout << "A lista esta vazia" << endl;
 	}
+	
 }
