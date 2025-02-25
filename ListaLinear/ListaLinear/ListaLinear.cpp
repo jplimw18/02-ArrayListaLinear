@@ -123,6 +123,7 @@ void buscarElemento()
 		if (lista[i] == query)
 		{
 			ocorr++;
+
 			pos[tailPos++] = i;
 		}
 	}
